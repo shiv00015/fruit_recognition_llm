@@ -12,10 +12,10 @@ class GeminiService:
         
         try:
             # Test connection and get model
-            models = list(genai.list_models())
-            print(f"Found {len(models)} models:")
-            for m in models:
-                print(f"- {m.name}")
+            # models = list(genai.list_models())
+            # print(f"Found {len(models)} models:")
+            # for m in models:
+            #     print(f"- {m.name}")
             self.model = genai.GenerativeModel("gemini-2.5-flash")
         except Exception as e:
             print(f"Error during initialization: {str(e)}")
@@ -23,7 +23,7 @@ class GeminiService:
 
     async def analyze_image(self, image_data: bytes, prompt: str):
         try:
-            print('prompt', prompt)
+            # print('prompt', prompt)
             response = self.model.generate_content([
                 prompt,
                 {"mime_type": "image/jpeg", "data": image_data}
