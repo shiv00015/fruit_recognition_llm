@@ -16,7 +16,7 @@ class GeminiService:
             # print(f"Found {len(models)} models:")
             # for m in models:
             #     print(f"- {m.name}")
-            self.model = genai.GenerativeModel("gemini-2.5-flash")
+            self.model = genai.GenerativeModel("gemini-3-flash-preview")
         except Exception as e:
             print(f"Error during initialization: {str(e)}")
             raise
